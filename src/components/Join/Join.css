@@ -1,0 +1,96 @@
+html,
+body {
+  font-family: 'Roboto', sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+#root {
+  height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.joinOuterContainer {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+  align-items: center;
+  background-color: #1a1a1d;
+}
+
+.joinInnerContainer {
+  width: 40%;
+}
+
+.joinInput {
+  border-radius: 5px;
+  border: 0;
+  padding: 10px;
+  width: 100%;
+  font-size: 0.85rem;
+  -webkit-appearance: none;
+  border: 2px;
+  border-style: solid;
+  border-color: white;
+  transition: all 0.2s linear;
+}
+
+.joinInput:focus {
+  box-shadow: 0 0 10px #7e57c2;
+  border-color: #7e57c2;
+}
+
+.main-heading {
+  color: white;
+}
+
+.heading {
+  color: white;
+  font-size: 2.2em;
+  padding-bottom: 10px;
+  border-bottom: 2px solid white;
+}
+
+.button {
+  color: #fff !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #7e57c2;
+  cursor: pointer;
+  padding: 12px;
+  border-radius: 5px;
+  display: inline-block;
+  border: none;
+  width: 100%;
+  text-shadow: 0 1px 1px #333;
+  font-size: 1.2rem;
+  transition: all 0.2s linear;
+  -webkit-appearance: none;
+}
+
+.button:hover,
+.button:focus {
+  background: #673ab7;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .joinOuterContainer {
+    height: 100%;
+  }
+
+  .joinInnerContainer {
+    width: 90%;
+  }
+}
+
+button:focus {
+  outline: 0;
+}

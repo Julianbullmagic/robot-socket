@@ -1,0 +1,42 @@
+.form {
+  display: flex;
+  border-top: 2px solid #d3d3d3;
+}
+
+.input {
+  border: none;
+  border-radius: 0;
+  padding: 15px;
+  font-size: 0.9rem;
+  flex: 1;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+.sendButton {
+  color: #fff !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #7e57c2;
+  text-shadow: 0 1px 1px #333;
+  cursor: pointer;
+  display: inline-block;
+  border: none;
+  width: 50px;
+  padding: 10px;
+  transition: all 0.2s linear;
+  -webkit-appearance: none;
+}
+
+.sendButton:hover,
+.sendButton:focus {
+  background: #673ab7;
+}
+
+.sendButton > svg {
+  margin-top: 5px;
+}

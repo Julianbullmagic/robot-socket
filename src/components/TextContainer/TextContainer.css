@@ -1,0 +1,39 @@
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  margin-left: 100px;
+  color: white;
+  height: 60%;
+  justify-content: space-between;
+}
+
+.activeContainer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 50%;
+}
+
+.activeItem {
+  display: flex;
+  align-items: center;
+}
+
+.activeContainer img {
+  padding-left: 10px;
+}
+
+.textContainer h1 {
+  margin: 0;
+  font-size: 1.9rem;
+}
+
+.textContainer .icons {
+  margin-top: 30px;
+  text-align: center;
+}
+
+@media (min-width: 320px) and (max-width: 768px) {
+  .textContainer {
+    display: none;
+  }
+}
