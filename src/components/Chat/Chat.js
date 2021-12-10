@@ -17,7 +17,7 @@ const Chat = ({ location }) => {
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
 
-  const ENDPOINT = 'http://robot-socket-backend.herokuapp.com';
+  const ENDPOINT = 'https://robot-socket-backend.herokuapp.com';
 
   // location coming from router prop
   useEffect(() => {

@@ -10,7 +10,7 @@ import io from "socket.io-client"
 import "./App.css"
 // 'http://robot-socket-backend.herokuapp.com'
 
-const socket = io.connect('http://robot-socket-backend.herokuapp.com')
+const socket = io.connect('https://robot-socket-backend.herokuapp.com')
 function VideoStream() {
 	const [ me, setMe ] = useState("")
 	const [ stream, setStream ] = useState()
