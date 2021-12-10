@@ -6,6 +6,7 @@ import Input from '../Input/Input';
 import Messages from '../Messages/Messages';
 import TextContainer from '../TextContainer/TextContainer';
 import './Chat.css';
+import VideoStream from "./video-stream";
 
 let socket;
 
@@ -16,7 +17,7 @@ const Chat = ({ location }) => {
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
 
-  const ENDPOINT = 'https://dinoxas-react-messenger.herokuapp.com';
+  const ENDPOINT = 'http://robot-socket-backend.herokuapp.com';
 
   // location coming from router prop
   useEffect(() => {
@@ -55,6 +56,7 @@ const Chat = ({ location }) => {
   };
 
   return (
+    <>
     <div className='outerContainer'>
       <div className='container'>
         <InfoBar room={room} />
@@ -66,7 +68,11 @@ const Chat = ({ location }) => {
         />
       </div>
       <TextContainer users={users} />
+
+
     </div>
+      <VideoStream/>
+      </>
   );
 };
 
