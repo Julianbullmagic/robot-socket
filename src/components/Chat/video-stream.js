@@ -4,11 +4,27 @@ import TextField from "@material-ui/core/TextField"
 import AssignmentIcon from "@material-ui/icons/Assignment"
 import PhoneIcon from "@material-ui/icons/Phone"
 import React, { useEffect, useRef, useState } from "react"
+import { StreamCamera, Codec } from "pi-camera-connect";
+import * as fs from "fs";
 import { CopyToClipboard } from "react-copy-to-clipboard"
 import Peer from "simple-peer"
 import io from "socket.io-client"
 import "./App.css"
-// 'http://robot-socket-backend.herokuapp.com'
+
+// const streamCamera = new StreamCamera({
+//     codec: Codec.H264
+// });
+//
+// const writeStream = fs.createWriteStream("video-stream.h264");
+//
+// const videoStream = streamCamera.createStream();
+//
+// videoStream.pipe(writeStream);
+//
+// streamCamera.startCapture().then(() => {
+//
+//     setTimeout(() => streamCamera.stopCapture(), 5000);
+// });
 
 const socket = io.connect('https://robot-socket-backend.herokuapp.com')
 function VideoStream() {
@@ -26,7 +42,7 @@ function VideoStream() {
 	const connectionRef= useRef()
 
 	useEffect(() => {
-		navigator.mediaDevices.getUserMedia({ video: true, audio: false}).then((stream) => {
+		navigator.mediaDevices.getUserMedia({ video: { width: 1280, height: 720 } }).then((stream) => {
 			setStream(stream)
 				myVideo.current.srcObject = stream
 		})
