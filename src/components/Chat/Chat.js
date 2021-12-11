@@ -6,7 +6,6 @@ import Input from '../Input/Input';
 import Messages from '../Messages/Messages';
 import TextContainer from '../TextContainer/TextContainer';
 import './Chat.css';
-import VideoStream from "./video-stream";
 
 let socket;
 
@@ -71,7 +70,6 @@ const Chat = ({ location }) => {
 
 
     </div>
-      <VideoStream/>
       </>
   );
 };
