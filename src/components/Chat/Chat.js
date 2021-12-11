@@ -6,6 +6,11 @@ import Input from '../Input/Input';
 import Messages from '../Messages/Messages';
 import TextContainer from '../TextContainer/TextContainer';
 import './Chat.css';
+import { StillCamera } from "pi-camera-connect";
+import * as fs from "fs";
+
+
+
 
 let socket;
 
@@ -15,6 +20,15 @@ const Chat = ({ location }) => {
   const [users, setUsers] = useState([]);
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
+
+  const takePhoto = async () => {
+
+      const stillCamera = new StillCamera();
+
+      const image = await stillCamera.takeImage();
+
+      fs.writeFileSync("still-image.jpg", image);
+  };
 
   const ENDPOINT = 'https://robot-socket-backend.herokuapp.com';
 
@@ -65,6 +79,7 @@ const Chat = ({ location }) => {
           setMessage={setMessage}
           sendMessage={sendMessage}
         />
+        <button onClick={takePhoto}>Take Image</button>
       </div>
       <TextContainer users={users} />
 
